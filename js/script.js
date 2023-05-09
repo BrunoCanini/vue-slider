@@ -35,10 +35,16 @@ createApp({
     },
     methods: {
         prevSlide(){
-            this.activeImage--;
+            this.activeImage-- ;
+            if(this.activeImage < 0){
+                this.activeImage = 4;
+            }
         },
         nextSlide(){
             this.activeImage++;
+            if( this.activeImage >= 4 ){
+                this.activeImage = 0;
+            }
         }
       },
   }).mount('#app')
